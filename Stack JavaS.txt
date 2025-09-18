@@ -1,0 +1,43 @@
+// Создаем пустой массив, который будет нашим стеком
+const stack = [];
+
+// Метод для добавления элемента в стек (аналог push)
+function pushToStack(element) {
+  stack.push(element);
+  console.log(`Добавлен элемент: ${element}. Текущий стек: [${stack}]`);
+}
+
+// Метод для удаления элемента из стека (аналог pop)
+function popFromStack() {
+  if (stack.length === 0) {
+    console.log("Стек пуст. Нечего удалять.");
+    return null; // Возвращаем null, если стек пуст
+  }
+  const poppedElement = stack.pop();
+  console.log(`Удален элемент: ${poppedElement}. Текущий стек: [${stack}]`);
+  return poppedElement;
+}
+
+// Метод для просмотра верхнего элемента стека (аналог peek)
+function peekAtStack() {
+  if (stack.length === 0) {
+    console.log("Стек пуст.");
+    return null;
+  }
+  const topElement = stack[stack.length - 1];
+  console.log(`Верхний элемент: ${topElement}. Текущий стек: [${stack}]`);
+  return topElement;
+}
+
+// Пример использования:
+pushToStack(10); // Добавлен элемент: 10. Текущий стек: [10]
+pushToStack(20); // Добавлен элемент: 20. Текущий стек: [10,20]
+pushToStack(30); // Добавлен элемент: 30. Текущий стек: [10,20,30]
+
+peekAtStack();   // Верхний элемент: 30. Текущий стек: [10,20,30]
+
+popFromStack();  // Удален элемент: 30. Текущий стек: [10,20]
+popFromStack();  // Удален элемент: 20. Текущий стек: [10]
+popFromStack();  // Удален элемент: 10. Текущий стек: []
+
+popFromStack();  // Стек пуст. Нечего удалять.
