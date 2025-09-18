@@ -1,0 +1,15 @@
+#include <list>      // Включаем заголовочный файл для std::list
+#include <iostream>
+
+int main() {
+    // Создание списка с начальными значениями
+    std::list<int> numbers = {10, 20, 30};
+
+    // Вывод элементов списка
+    for (int num : numbers) {
+        std::cout << num << " "; // Вывод: 10 20 30
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
